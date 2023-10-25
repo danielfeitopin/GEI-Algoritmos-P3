@@ -1,0 +1,100 @@
+Práctica 3 Algoritmos 
+
+Contexto:
+-Demostramos empíricamente que crear un montículo a partir de un vector
+cualquiera con n elementos (operacióncrearMonticulo) se ejecuta en un 
+tiempo O(n).
+
+-Calculamos empíricamente la complejidad del algoritmo de ordenación para 
+tres situaciones iniciales diferentes: (a) el vector ya está ordenado en 
+orden ascendente,(b) el vector ya está ordenadoen orden descendente, y (c) 
+el vector está inicialmente desordenado.
+
+-El experimento se ha realizado en la máquina CABANAS_13 de la Facultad de 
+Ingeniería Informática (ubicada en el laboratorio 0.1).
+
+-Las unidades de la medida de tiempos son microsegundos.
+
+Tablas:
+
+Crear montículo
+
+Subestimada f(n)=n^0.912
+Ajustada g(n)=n^1.012	cte=0.023	
+Sobrestimada h(n)=n^1.112
+
+   (n)		t(n)	 t(n)/f(n)	t(n)/g(n)	t(n)/h(n)
+*   2000          54.063   0.0527668034   0.0246750355   0.0115386443
+*   4000         102.997   0.0534251639   0.0233098707   0.0101703024
+*   8000         205.624   0.0566833795   0.0230752671   0.0093937227
+*  16000         411.206   0.0602423658   0.0228817913   0.0086911655
+   32000         853.000   0.0664128704   0.0235362492   0.0083410794
+   64000        1716.000   0.0710037273   0.0234781109   0.0077632783
+  128000        3464.000   0.0761732334   0.0235007322   0.0072503738
+  256000        6897.000   0.0806019182   0.0232017841   0.0066787838
+			
+Ordenacion por Montículos con inicializacion descendente
+
+Subestimada f(n)=n^1.05
+Ajustada g(n)=n^1.085	cte=0.089
+Sobrestimada h(n)=n^1.15
+
+   (n)		t(n)	 t(n)/f(n)	t(n)/g(n)	t(n)/h(n)
+*   2000         346.858   0.1185960488   0.0908937812   0.0554583853
+    4000         714.000   0.1199058140   0.0881988903   0.0514433476
+    8000        1516.000   0.1209079102   0.0882767967   0.0492204654
+   16000        3225.000   0.1242234931   0.0885236959   0.0471836723
+   32000        7144.000   0.1329027504   0.0924386766   0.0470997900
+   64000       14642.000   0.1329562332   0.0893089803   0.0435004182
+  128000       30838.000   0.1338183701   0.0886672802   0.0412852329
+  256000       64797.000   0.1358009899   0.0878242676   0.0390911943
+			  			
+Ordenacion por Montículos con inicializacion ascendente
+
+Subestimada f(n)=n^1.065
+Ajustada g(n)=n^1.095	cte=0.075
+Sobrestimada h(n)=n^1.125
+
+   (n)		t(n)	 t(n)/f(n)	t(n)/g(n)	t(n)/h(n)
+*   2000         312.075   0.0952054990   0.0757933554   0.0603392953
+    4000         671.000   0.0978427452   0.0762898621   0.0594846663
+    8000        1434.000   0.0999443655   0.0763247896   0.0582871628
+   16000        3064.000   0.1020706733   0.0763444340   0.0571023235
+   32000        6644.000   0.1057900681   0.0774979826   0.0567722228
+   64000       13875.000   0.1058969366   0.0757645277   0.0543601343
+  128000       29338.000   0.1067214916   0.0749955661   0.0527010525
+  256000       62008.000   0.1078132557   0.0742035976   0.0510714000
+					   	  						
+Ordenacion por Montículos con inicializacion aleatoria
+
+Subestimada f(n)=n^1.06
+Ajustada g(n)=n^1.11	cte=0.079
+Sobrestimada h(n)=n^1.16
+
+   (n)		t(n)	 t(n)/f(n)	t(n)/g(n)	t(n)/h(n)
+*   2000         369.938   0.1172295638   0.0801651573   0.0548193838
+    4000         795.000   0.1208324379   0.0798142686   0.0527202594
+    8000        1715.000   0.1250226610   0.0797690167   0.0508955415
+   16000        3686.000   0.1288807781   0.0794295588   0.0489526437
+   32000        7967.000   0.1336090390   0.0795386730   0.0473500937
+   64000       17060.000   0.1372234249   0.0789076766   0.0453743333
+  128000       36826.000   0.1420731406   0.0789135321   0.0438319694
+  256000       80176.000   0.1483576762   0.0795972427   0.0427057178
+					  	  					
+*:Cuando los tiempos son menores a 500 microsegundos se ejcuta el algoritmo 
+K=1000 veces y se calcula el tiempo promedio.	
+
+Discusión: 
+-Las mayores dificultades fueron encontrar las cotas. Para evitar las 
+anomalias hemos ejecutado varias veces el código y hemos seleccionado los 
+datos de la última ejecución.  
+
+Conclusión: 
+-Los tiempos de la creación del montículo son notablemente menores que los
+tiempos de la ordención por Montículos con cualquier clase de inicialización.
+
+-Los tiempos de la ordenación por Montículos con inicialización descendente
+son ligeramente superiores que los tiempos con inicialización ascendente.
+
+-Los tiempos de la ordenación por Montículos con inicialización aleatoria
+son superiores que los tiempos con inicialización ascendente y descendente.
